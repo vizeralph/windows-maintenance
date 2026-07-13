@@ -1,5 +1,10 @@
 @echo off
 
+:: Check for help flag
+if "%~1"=="/?" goto :ShowHelp
+if "%~1"=="-h" goto :ShowHelp
+if "%~1"=="--help" goto :ShowHelp
+
 :: Check for Administrator privileges
 net session >nul 2>&1
 if %errorLevel% neq 0 (
@@ -25,3 +30,15 @@ for %%d in (%*) do (
 )
 
 pause
+
+:ShowHelp
+echo ====================================================
+echo Integrity Check Utility
+echo ====================================================
+echo Usage: integrity-check.bat [Drive Letters...]
+echo.
+echo Examples:
+echo    integrity-check.bat          - Scans default primary system drive.
+echo    integrity-check.bat D: E:    - Scans D: and E: drives sequentially.
+echo ====================================================
+exit /b 0
