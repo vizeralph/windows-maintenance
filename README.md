@@ -20,4 +20,4 @@ Right-click the script and select **Run as Administrator** to scan the core oper
 ### Run via Command Line (Targeting Specific Drives)
 You can pass target drive letters as arguments directly through an elevated command prompt:
 ```cmd
-windows-maintenance.bat D: E: F:
+integrity-check.bat D: E: F:
