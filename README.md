@@ -3,21 +3,17 @@
 > **Ex ruina, restitutio.**  
 > *(Out of ruin, restoration.)*
 
-A secure, robust Windows Batch utility designed to automate system integrity checks and repair component store corruption with zero redundant flags.
+A curated collection of Windows maintenance scripts for system diagnostics, integrity checks, repairs, and general upkeep.
 
-## Features
-
-* **Privilege Guardrails:** Automatically detects and enforces Administrator execution rights to prevent partial run failures.
-* **Optimized Execution Pipeline:** Invokes `DISM.exe`, `sfc`, and `chkdsk` sequentially without redundant scanning loops.
-* **Dynamic Argument Parsing:** Supports targeting specific drive letters sequentially with built-in quote-stripping protection (`~`) to handle malformed inputs.
-* **Failsafe Defaults:** Automatically falls back to checking the primary system partition (`C:`) if no specific drive arguments are provided.
+Each script is intended to be focused, self-contained, and independently reviewable.
 
 ## Usage
 
-### Run Default (System Drive)
-Right-click the script and select **Run as Administrator** to scan the core operating system files and the `C:` drive.
+> [!WARNING]
+> Maintenance operations may modify system files, settings, or disk state. Review each script before execution.
 
-### Run via Command Line (Targeting Specific Drives)
-You can pass target drive letters as arguments directly through an elevated command prompt:
-```cmd
-integrity-check.bat D: E: F:
+Run the desired script directly or through Command Prompt.
+
+Some scripts require Administrator privileges or accept command-line arguments. Refer to the individual script for its specific requirements and behavior.
+
+Depending on the operation, a system restart may be required for changes to take effect.
